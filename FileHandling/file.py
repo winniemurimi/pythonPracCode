@@ -37,12 +37,22 @@ def file_operations(filename, mode, content=None):
         return False, False
 
 # Example usage:
-
+"""
+    Purpose: Creates a new file or truncates an existing file to zero length.
+    Behavior: If the file already exists, all existing content is deleted, and new data is written from the beginning.
+    Usage: Use this mode when you want to start fresh with the file content.
+"""
 # Writing to a file
-write_success = file_operations("file.docx", "w", "Hello, world!\nThis is a sample file.")
+write_success = file_operations("file.docx", "w", "Hie, world!\nThis is a sample file.")
 if write_success:
   print("Write successful")
 
+
+"""
+    Purpose: Opens an existing file and adds new content at the end of the file without truncating it.
+    Behavior: If the file does not exist, it creates a new one. Existing content remains intact.
+    Usage: Use this mode when you want to add data to a file without losing the existing content.
+"""
 # Appending to a file
 append_success = file_operations("file.docx", "a", "\nAppending some more text.")
 if append_success:

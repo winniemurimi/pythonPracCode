@@ -3,6 +3,8 @@ class BankAccount:
         self.__account_number = account_number  # Private attribute
         self.__balance = balance  # Private attribute
 
+    # It restricts direct access to some of an object('s '
+    #  'components to prevent accidental modification and protect the internal state)
     def deposit(self, amount):
         if amount > 0:
             self.__balance += amount
